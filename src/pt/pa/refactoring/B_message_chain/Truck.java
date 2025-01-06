@@ -26,4 +26,8 @@ public class Truck {
     public LicencePlate getLicencePlate() {
         return licencePlate;
     }
+
+    public String getLicencePlateId() {
+        return licencePlate.getId();
+    }
 }

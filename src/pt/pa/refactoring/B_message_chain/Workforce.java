@@ -36,8 +36,8 @@ public class Workforce {
             if(firstLetter == '*' || driver.getFirstName().charAt(0) == firstLetter) {
                 sb.append(String.format("%s is driving the truck %s (Licence Plate: %s)",
                         driver.getFullName(),
-                        driver.getAssignedTruck().getMakeModel(),
-                        driver.getAssignedTruck().getLicencePlate().getId()));
+                        driver.getTruckMakeModel(),
+                        driver.getTruckLicencePlateId()));
                 sb.append("\n");
             }
         }
@@ -47,7 +47,7 @@ public class Workforce {
 
     public Driver searchTruckDriverOf(String licenceId) {
         for(Driver driver : driverList) {
-            if( driver.getAssignedTruck().getLicencePlate().getId().equalsIgnoreCase(licenceId)) {
+            if( driver.getTruckLicencePlateId().equalsIgnoreCase(licenceId)) {
                 return driver;
             }
         }

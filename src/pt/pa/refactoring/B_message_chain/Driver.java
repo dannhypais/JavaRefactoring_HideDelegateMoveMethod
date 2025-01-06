@@ -29,6 +29,13 @@ public class Driver {
         this.assignedTruck = assignedTruck;
     }
 
+    public String getTruckMakeModel() {
+        return assignedTruck.getMakeModel();
+    }
+
+    public String getTruckLicencePlateId() {
+        return assignedTruck.getLicencePlateId();
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
