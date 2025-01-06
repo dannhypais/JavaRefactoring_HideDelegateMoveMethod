@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MyContacts {
-    Set<Person> list;
-    Date creationDate;
+    private Set<Person> list;
+    private Date creationDate;
 
     public MyContacts() {
         list = new HashSet<>();
@@ -26,5 +26,29 @@ public class MyContacts {
         }
 
         return sb.toString();
+    }
+
+    public void addContact(Person person) {
+        list.add(person);
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public int getNumberOfContacts() {
+        return list.size();
+    }
+
+    public Set<Person> getContacts() {
+        return list;
+    }
+
+    public int countMissingEmailAddresses() {
+        int missingEmail = 0;
+        for(Person p : list) {
+            if(p.emailAddress == null) missingEmail++;
+        }
+        return missingEmail;
     }
 }
