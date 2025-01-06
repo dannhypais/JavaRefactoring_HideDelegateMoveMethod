@@ -17,19 +17,13 @@ public class Figure {
 
     public void move(int dx, int dy) {
         for (Line l : lines) {
-            l.getStart().setX(l.getStart().getX()+dx);
-            l.getStart().setY(l.getStart().getY()+dy);
-            l.getEnd().setX(l.getEnd().getX()+dx);
-            l.getEnd().setY(l.getEnd().getY()+dy);
+            l.move(dx, dy);
         }
     }
 
     public boolean contains(Point point) {
-
         for (Line l : lines) {
-            if ( l.getStart().getX() == point.getX() && l.getStart().getY() == point.getY() )
-                return true;
-            if ( l.getEnd().getX() == point.getX() && l.getEnd().getY() == point.getY() )
+            if ( l.contains(point) )
                 return true;
         }
         return false;
